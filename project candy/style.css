@@ -1,0 +1,186 @@
+.grid-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5fr 6fr 8fr 8fr 2fr 1fr;
+  height: 100vh;
+  grid-template-areas:
+    "header"
+    "donut"
+    "contact"
+    "order"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgb(255, 255, 255);
+  background-image: url("/Donut/pawel-czerwinski-d7iIvTyzccY-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.705);
+  z-index: 1;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: main;
+  background: #ffbc0f;
+  font-family: "Baloo 2", Arial, sans-serif;
+  text-align: center;
+  font-size: large;
+  padding: 20%;
+}
+
+body {
+  margin: 0;
+}
+
+.order {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  grid-area: order;
+  background: #5fc3d9;
+  background-image: url("/Donut/slashio-photography-ZG9ggI_pjFw-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  font-size: x-large;
+  color: white;
+  font-family: "Baloo 2", Arial, sans-serif;
+  z-index: 1;
+}
+
+.order:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  z-index: -1;
+  background: url("/Donut/slashio-photography-ZG9ggI_pjFw-unsplash.jpg");
+}
+
+.contact {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  grid-area: contact;
+  background: #d853e4;
+  background-image: url("/Donut/najlacam-F71ZHHBYs3w-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  font-size: x-large;
+  font-family: "Baloo 2", Arial, sans-serif;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+}
+
+.contact:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  z-index: -1;
+  background: url("/Donut/najlacam-F71ZHHBYs3w-unsplash.jpg");
+}
+
+.donut {
+  grid-area: donut;
+  background: rgb(194, 87, 15);
+  background-image: url("/Donut/shayna-douglas-GvoVScughvI-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px #d30f98;
+}
+
+a:hover {
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: footer;
+  background: #d84f93;
+  font-family: "Baloo 2", Arial, sans-serif;
+  font-size: small;
+}
+
+img {
+  width: 70px;
+}
+
+img:hover {
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+button {
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.705);
+  border-radius: 50px;
+  margin: 5px;
+}
+
+button:hover {
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+button:active {
+  background: #e5e5e5;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  outline: none;
+}
+
+/* Tablets (portrait)*/
+@media (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 4fr 3fr 1fr;
+    height: 100vh;
+    grid-template-areas:
+      "header   header    header    header"
+      "main     main      donut     donut"
+      "order    order     contact   contact"
+      "footer   footer    footer    footer";
+  }
+}
+/* Desktop */
+@media (min-width: 1024px) {
+  .grid-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1.2fr 1.5fr;
+    grid-template-rows: 1fr 4fr 3fr 1fr;
+    height: 100vh;
+    grid-template-areas:
+      "main   main      header"
+      "main   main      donut"
+      "order  contact   donut"
+      "footer footer    footer";
+  }
+}

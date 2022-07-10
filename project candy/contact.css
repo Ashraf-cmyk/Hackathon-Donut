@@ -1,0 +1,195 @@
+.grid-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5fr 6fr 8fr 8fr 2fr 1fr;
+  height: 100vh;
+  grid-template-areas:
+    "header"
+    "order"
+    "order"
+    "order"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgb(255, 255, 255);
+  background-image: url("/Donut/pawel-czerwinski-d7iIvTyzccY-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.705);
+  z-index: 1;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: main;
+  background: #ffbc0f;
+  font-family: "Baloo 2", Arial, sans-serif;
+  text-align: center;
+  font-size: large;
+  margin: 30px;
+}
+
+.order {
+  position: relative;
+  display: block;
+  grid-area: order;
+  background: #5fc3d9;
+  background-image: url("/Donut/shayna-douglas-CQvFD9HrDyY-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  font-size: x-large;
+  color: white;
+  font-family: "Baloo 2", Arial, sans-serif;
+  z-index: 1;
+}
+
+.order:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  z-index: -1;
+  background: url("/Donut/shayna-douglas-CQvFD9HrDyY-unsplash.jpg");
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px #d30f98;
+}
+
+a:hover {
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.formulier {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  text-shadow: 2px 2px #d30f98;
+  margin: 10%;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0; // add top and bottom margin
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border: none;
+  border-radius: 20px;
+  width: 50%;
+  font-family: inherit;
+  font-size: inherit;
+  margin-left: 20px;
+}
+
+textarea {
+  width: 60%;
+  resize: vertical;
+  padding: 15px;
+  border-radius: 15px;
+  border: 0;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.list {
+  display: inline-block;
+  margin: 20px;
+}
+
+.donut {
+  grid-area: donut;
+  background: rgb(194, 87, 15);
+  background-image: url("/Donut/shayna-douglas-GvoVScughvI-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: footer;
+  background: #d84f93;
+  font-family: "Baloo 2", Arial, sans-serif;
+  font-size: small;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #ffbc0f;
+}
+
+img {
+  width: 70px;
+  border-radius: 5px;
+}
+
+img:hover {
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+button {
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.705);
+  border-radius: 50px;
+  margin: 5px;
+}
+
+button:hover {
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+button:active {
+  background: #e5e5e5;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  outline: none;
+}
+
+/* Tablets (portrait)*/
+@media (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr 1fr;
+    height: 100vh;
+    grid-template-areas:
+      "header   header    header    header"
+      "order    order     order     order"
+      "main     main      main      main "
+      "footer   footer    footer    footer";
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.5fr;
+    grid-template-rows: 1fr 4fr 3fr 1fr;
+    height: 100vh;
+    grid-template-areas:
+      "header  header  header"
+      "order  order    main"
+      "order  order    main"
+      "footer footer   footer";
+  }
+}
